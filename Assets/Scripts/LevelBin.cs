@@ -7,6 +7,7 @@ using UnityEngine;
  * Contient référence au Level de Bin
  * Contient une méthode déclenchée au démarrage du level
  * Contient une update du Level
+ * Est responsable du mouvement de la poubelle
  */
 public abstract class LevelBin
 {
@@ -19,8 +20,8 @@ public abstract class LevelBin
 
     public abstract void StateBegin();
     public abstract void StateEnd();
-    public abstract void StateUpdate();
-    public abstract void StateUpdateState();
-
+    public abstract void LevelUpdate();
+    public abstract void LevelUpdateState();
+    public abstract void Move();
 
 }

@@ -24,6 +24,11 @@ public class LevelStateBin
 
     public void UpdateLevel()
     {
+        currentLevel.LevelUpdate();
     }
 
+    public void ChangeState()
+    {
+        currentLevel.LevelUpdateState();
+    }
 }
