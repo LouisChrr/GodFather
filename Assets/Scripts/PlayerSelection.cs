@@ -11,7 +11,7 @@ public class PlayerSelection : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             SelectPreviousPlayer();
         }
@@ -24,7 +24,7 @@ public class PlayerSelection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             print(GetPlayerSelected());
-        }
+        }*/
     }
 
     public void SelectNextPlayer()
