@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -930,13 +930,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c2cfd3e6dd50648986057c608f0382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuObjects:
+  - {fileID: 973483492}
   hasGameStarted: 0
   playersNumber: 0
-  colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 0.57621884, b: 1, a: 1}
-  - {r: 1, g: 0.85848266, b: 0, a: 1}
-  - {r: 0.07894802, g: 1, b: 0, a: 1}
+  sprites:
+  - {fileID: 21300000, guid: 70dd207196fd13994a17320a6ce47a90, type: 3}
+  - {fileID: 21300000, guid: a294f418cb1f1145e86b7d65db77a0c2, type: 3}
+  - {fileID: 21300000, guid: e94a746db2a66bb65919eb70ef2be7b8, type: 3}
+  - {fileID: 21300000, guid: 22a9337063a2b0d219b505b2ae62f870, type: 3}
+  anims:
+  - {fileID: 9100000, guid: 6b22a4b30fa3d038d8d3da0233816800, type: 2}
+  - {fileID: 9100000, guid: 603c2ef405ddfa72f9ac3d316e7e4c49, type: 2}
+  - {fileID: 9100000, guid: 1d38e56fa564a101db6efd5e9abf0f64, type: 2}
+  - {fileID: 9100000, guid: 6754cd3b2cc3e7acfa12c569e3259260, type: 2}
   poubelles: []
   poubellesUI: []
   text: {fileID: 295959918}

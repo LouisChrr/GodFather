@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PoubelleIdentifier : MonoBehaviour
 {
     public int ID;
-    private Color PoubelleColor;
+    private Sprite PoubelleSprite;
     bool ready = false;
     bool canBeReady = false;
     // Start is called before the first frame update
@@ -14,7 +14,7 @@ public class PoubelleIdentifier : MonoBehaviour
       {
         PreGameManager.Instance.poubelles.Add(this);
         ID = PreGameManager.Instance.playersNumber;
-        PoubelleColor = PreGameManager.Instance.colors[ID-1];
+        PoubelleSprite = PreGameManager.Instance.sprites[ID-1];
 
         Invoke("CanBeReady", 0.5f);
 
