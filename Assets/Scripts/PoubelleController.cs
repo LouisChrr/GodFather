@@ -32,7 +32,7 @@ public class PoubelleController : MonoBehaviour
         transform.position = new Vector2(position.x, position.y);
         ModifScore();
         ChangeLevel();
-        print(level);
+        //print(level);
         //transform.Translate(movement * Time.deltaTime);
         //transform.Tr
         
@@ -70,6 +70,9 @@ public class PoubelleController : MonoBehaviour
             }else{// SI FULL GAUCHE
                 anim.SetBool("Left", true);
             }
+
+
+
         }else{//SI TOP OU BAS
                 if(movement.y >0){//SI EN HAUT
             anim.SetBool("Top", true);
@@ -104,14 +107,14 @@ public class PoubelleController : MonoBehaviour
 
     void ModifScore()
     {
-        if (Input.GetKeyDown(KeyCode.JoystickButton4) 
-            && score != 0)
-        {
-            score--;
-        }
-        if (Input.GetKeyDown(KeyCode.JoystickButton3)){
-            score++;
-        }
+        // if (Input.GetKeyDown(KeyCode.JoystickButton4) 
+        //     && score != 0)
+        // {
+        //     score--;
+        // }
+        // if (Input.GetKeyDown(KeyCode.JoystickButton3)){
+        //     score++;
+        // }
     }
 
     void ChangeLevel()

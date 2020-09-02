@@ -18,7 +18,7 @@ public class HumanMove : MonoBehaviour
     void Start()
     {
         position = transform.position;
-        ori = spawn.orient;
+        //ori = spawn.orient;
         //orient = spawn.orient;
     }
 

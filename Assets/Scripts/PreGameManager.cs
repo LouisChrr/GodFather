@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PreGameManager : MonoBehaviour
 {
     public List<GameObject> MenuObjects;
+    public List<GameObject> GameObjects;
+    public ScorePlayerUI spUI;
     public bool hasGameStarted = false;
     public int playersNumber = 0;
     public List<Sprite> sprites;
@@ -80,10 +82,17 @@ public class PreGameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
     readyText.text = "Starting game in 1.. ";
             yield return new WaitForSeconds(1);
+            hasGameStarted = true;
     foreach(GameObject go in MenuObjects){
-hasGameStarted = true;
+
         go.SetActive(false);
     }
+        foreach(GameObject go in GameObjects){
+
+        go.SetActive(true);
+    }
+
+    spUI.DisplayUiForXPlayers(playersNumber);
     // DESACTIVER TOUT LE RESTE
     // TODO: EMpecher les poubelles de bouger si game a pas commencé
 

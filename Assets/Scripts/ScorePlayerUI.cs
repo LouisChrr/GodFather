@@ -13,8 +13,8 @@ public class ScorePlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DisplayUiForXPlayers(4);
-        UpdateScoreOfPlayer(1,50,5);
+        //DisplayUiForXPlayers(4);
+        //UpdateScoreOfPlayer(1,50,5);
     }
 
     public void DisplayUiForXPlayers(int nbPlayers)
