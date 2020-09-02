@@ -12,7 +12,7 @@ public class PlayersUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = "0 player detected";
+        
     }
 
     // Update is called once per frame
@@ -23,8 +23,8 @@ public class PlayersUI : MonoBehaviour
 
     void OnPlayerJoined()
     {
-        players++;
-        text.text = players + " players detected";
+        
+        
     }
 
 }

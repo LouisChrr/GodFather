@@ -7,7 +7,7 @@ public class PoubelleController : MonoBehaviour
 {
     public Vector2 movement;
     public float moveSpeed = 10;
-
+    public int score;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,7 @@ public class PoubelleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 
