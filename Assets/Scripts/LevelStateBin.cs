@@ -13,7 +13,7 @@ using UnityEngine;
 public class LevelStateBin
 {
 
-    public LevelBin bin;
+    public Bin bin;
     public int level;
     public LevelBin currentLevel;
 
@@ -21,4 +21,9 @@ public class LevelStateBin
     {
         bin = poubelle;
     }
+
+    public void UpdateLevel()
+    {
+    }
+
 }

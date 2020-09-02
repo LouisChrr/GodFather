@@ -12,7 +12,7 @@ public class Bin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        level = new LevelBin(this);
+        //level = new LevelBin(this);
     }
 
     // Update is called once per frame
