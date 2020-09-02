@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HumanSpawn : MonoBehaviour
 {
-    public float timeSpawn = 2f;
+    public float timeSpawn = 5f;
     public float timer = 0f;
     public GameObject human;
     public int orient;
@@ -21,7 +21,8 @@ public class HumanSpawn : MonoBehaviour
         if(timer > timeSpawn)
         {
             GameObject newHuman = Instantiate(human);
-            //newHuman.transform.position = transform.position
+
+            newHuman.transform.position = transform.position;
             timer = 0f;
             Destroy(newHuman, 30);
         }
