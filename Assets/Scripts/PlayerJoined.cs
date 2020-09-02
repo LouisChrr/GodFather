@@ -10,6 +10,13 @@ public class PlayerJoined : MonoBehaviour
 
     public bool testAddPlayer = false;
 
+    public void Start(){
+
+
+    listePlayer = new List<GameObject>();
+
+    }
+
     private void Update()
     {
         if (testAddPlayer)
