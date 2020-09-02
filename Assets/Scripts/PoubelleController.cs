@@ -7,7 +7,7 @@ public class PoubelleController : MonoBehaviour
 {
     public Vector2 movement;
     public float moveSpeed = 10;
-
+    //public Bin poubelle;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,8 @@ public class PoubelleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //transform.Translate(Vector2.left*Time.deltaTime);
+        transform.Translate(movement * Time.deltaTime);
     }
 
     void OnMove(InputValue value)
