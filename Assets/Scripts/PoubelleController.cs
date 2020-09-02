@@ -10,11 +10,15 @@ public class PoubelleController : MonoBehaviour
     public int moveSpeed = 1;
     //public Bin poubelle;
     public int score;
+    public int level;
 
     // Start is called before the first frame update
     void Start()
     {
-        //position = transform.position;
+        position = transform.position;
+        score = 0;
+        level = 0;
+       // poubelle = new Bin();
     }
 
     // Update is called once per frame
@@ -24,9 +28,13 @@ public class PoubelleController : MonoBehaviour
         position.x += movement.x * Time.deltaTime * moveSpeed;
         position.y += movement.y * Time.deltaTime * moveSpeed;
         transform.position = new Vector2(position.x, position.y);
+        ModifScore();
+        ChangeLevel();
+        print(level);
         //transform.Translate(movement * Time.deltaTime);
         //transform.Tr
     }
+
 
     void OnMove(InputValue value)
     {
@@ -37,5 +45,33 @@ public class PoubelleController : MonoBehaviour
     void OnGrab()
     {
         print("Grab!");
+    }
+
+    void ModifScore()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) 
+            && score != 0)
+        {
+                score--;
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadEnter)){
+            score++;
+        }
+    }
+
+    void ChangeLevel()
+    {
+        if (score <10)
+        {
+            level = 0;
+        }
+        else if (score >= 10 && score < 20)
+        {
+            level = 1;
+        }
+        else
+        {
+            level = 2;
+        }
     }
 }
