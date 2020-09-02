@@ -16,7 +16,7 @@ public class Bin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        level = 2;
+        level = 0;
         score = 0;
         //position = transform.position;
         //level = new LevelBin(this);
@@ -50,12 +50,7 @@ public class Bin : MonoBehaviour
         }*/
     }
 
-    void OnMove(InputValue value)
-    {
-        movement = value.Get<Vector2>();
-        print("moving");
-    }
-
+   
     public void Move(int vit)
     {
         transform.Translate(movement * Time.deltaTime * vit);
