@@ -6,8 +6,13 @@ public class HumanMove : MonoBehaviour
 {
     public Vector2 position;
     public HumanSpawn spawn;
-    public float humanSpeed = 1f;
+    public float humanSpeed = 0.25f;
     public int ori;
+    public int maxRand = 5;
+
+    public float timerRot = 2f;
+    public float timer = 0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +26,12 @@ public class HumanMove : MonoBehaviour
     void Update()
     {
         Move();
-        Rotation();
+        if (timer > timerRot)
+        {
+            Rotation();
+            timer = 0f;
+        }
+        timer += Time.deltaTime;
     }
 
 
@@ -40,7 +50,7 @@ public class HumanMove : MonoBehaviour
 
     private void Rotation()
     {
-        int rd = Random.Range(0, 11);
+        int rd = Random.Range(0, maxRand);
         switch (rd)
         {
             case 0:
