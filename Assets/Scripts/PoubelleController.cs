@@ -49,12 +49,12 @@ public class PoubelleController : MonoBehaviour
 
     void ModifScore()
     {
-        if (Input.GetKeyDown(KeyCode.Space) 
+        if (Input.GetKeyDown(KeyCode.JoystickButton4) 
             && score != 0)
         {
-                score--;
+            score--;
         }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)){
+        if (Input.GetKeyDown(KeyCode.JoystickButton3)){
             score++;
         }
     }
