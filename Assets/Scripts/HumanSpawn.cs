@@ -24,7 +24,7 @@ public class HumanSpawn : MonoBehaviour
 
             newHuman.transform.position = transform.position;
             timer = 0f;
-            Destroy(newHuman, 30);
+            Destroy(newHuman, 180);
         }
         timer += Time.deltaTime;
     }
