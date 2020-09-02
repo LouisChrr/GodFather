@@ -1,0 +1,52 @@
+{
+    "name": "PoubelleInput",
+    "maps": [
+        {
+            "name": "Poubelle",
+            "id": "0660f889-924a-405f-a2d1-7e943267afe6",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "8067f746-875f-4d4b-a38f-ecf1cc42aa7d",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "20b3a501-85e6-431c-a95c-d8e913926b4b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c4bba733-9f06-47ee-a6bc-a59bd02ef927",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73470cb8-2be5-4e7d-a39c-bb308b1334a7",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
