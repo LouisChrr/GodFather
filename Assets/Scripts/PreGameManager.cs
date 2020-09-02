@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class PreGameManager : MonoBehaviour
 {
+    public List<GameObject> MenuObjects;
     public bool hasGameStarted = false;
     public int playersNumber = 0;
-    public List<Color> colors;
+    public List<Sprite> sprites;
+    public List<RuntimeAnimatorController> anims;
     public List<PoubelleIdentifier> poubelles;
     public List<PoubelleIdentifierUI> poubellesUI;
 
@@ -62,11 +64,30 @@ public class PreGameManager : MonoBehaviour
     public void OnPlayerReady(){
     readyPlayers++;
     readyText.text = readyPlayers +"/"+ poubelles.Count+" players ready";
+
     if(readyPlayers == poubelles.Count && readyPlayers != 0){
             // ALORS ON START LA GAME
             // COUNTDOWN ECT
         readyText.text = "Starting game in 3.. ";
+        StartCoroutine("StartGame");
     }
+
+    }
+
+
+    IEnumerator StartGame(){
+    readyText.text = "Starting game in 2.. ";
+            yield return new WaitForSeconds(1);
+    readyText.text = "Starting game in 1.. ";
+            yield return new WaitForSeconds(1);
+    foreach(GameObject go in MenuObjects){
+hasGameStarted = true;
+        go.SetActive(false);
+    }
+    // DESACTIVER TOUT LE RESTE
+    // TODO: EMpecher les poubelles de bouger si game a pas commencé
+
+
 
     }
 
