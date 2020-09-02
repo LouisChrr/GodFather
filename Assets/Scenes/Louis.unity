@@ -961,7 +961,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2070388130}
   - component: {fileID: 2070388129}
-  - component: {fileID: 2070388128}
   - component: {fileID: 2070388131}
   m_Layer: 0
   m_Name: PlayerInputManager
@@ -970,19 +969,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2070388128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2070388127}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d1f1b421e627a4bb35fa6be2998cbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1476403144}
 --- !u!114 &2070388129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,10 +1038,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c2cfd3e6dd50648986057c608f0382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasGameStarted: 0
   playersNumber: 0
   colors: []
   poubelles: []
+  poubellesUI: []
   text: {fileID: 1476403144}
+  playerJoinedUI: {fileID: 0}
 --- !u!1001 &6081970576990770078
 PrefabInstance:
   m_ObjectHideFlags: 0
