@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+/*
+ * Contient référence à la poubelle
+ * Contient une méthode pour enregistrer un nouveau niveau
+ * Contient une méthode pour passer d'un niveau à l'autre
+ * Met à jour le niveau en cours
+ */
 
-    // Update is called once per frame
-    void Update()
+
+public class LevelStateBin
+{
+
+    public LevelBin bin;
+    public int level;
+    public LevelBin currentLevel;
+
+    public LevelStateBin(Bin poubelle)
     {
-        
+        bin = poubelle;
     }
 }
