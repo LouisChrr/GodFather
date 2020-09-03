@@ -322,6 +322,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuObjects: []
+  GameObjects: []
+  spUI: {fileID: 0}
   hasGameStarted: 0
   playersNumber: 0
   sprites: []
@@ -344,8 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d1f1b421e627a4bb35fa6be2998cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  players: 0
 --- !u!114 &1451585828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +520,8 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   position: {x: 0, y: 0}
   moveSpeed: 10
+  moveSpeedLevelUp: 10
+  isLeveledUp: 0
   score: 0
   level: 0
   anim: {fileID: 0}
@@ -768,6 +770,10 @@ PrefabInstance:
     - target: {fileID: 7400716194085095796, guid: 2f3e40cca11d87841a467055e414661e, type: 3}
       propertyPath: orient
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400716194085095796, guid: 2f3e40cca11d87841a467055e414661e, type: 3}
+      propertyPath: timeSpawn
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f3e40cca11d87841a467055e414661e, type: 3}
