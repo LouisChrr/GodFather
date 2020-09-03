@@ -73,11 +73,12 @@ public class PoubelleIdentifier : MonoBehaviour
                 Destroy(other.gameObject);
                 score++;
                 float pourcentage = (score / scoreForEvolution) * 100 ;
-                if (pourcentage == 100)
+                if (pourcentage == 100 && levelEvolution < 1)
                 {
                     levelEvolution++;
                     pourcentage = 0;
                     score = 0;
+                    pc.isLeveledUp = true;
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage , 1);
             }
@@ -95,11 +96,12 @@ public class PoubelleIdentifier : MonoBehaviour
             {
                 score++;
                 float pourcentage = (score / scoreForEvolution) * 100;
-                if (pourcentage == 100)
+                if (pourcentage == 100 && levelEvolution < 1)
                 {
                     levelEvolution++;
                     pourcentage = 0;
                     score = 0;
+                    pc.isLeveledUp = true;
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
@@ -118,11 +120,12 @@ public class PoubelleIdentifier : MonoBehaviour
             {
                 score++;
                 float pourcentage = (score / scoreForEvolution) * 100;
-                if (pourcentage == 100)
+                if (pourcentage == 100 && levelEvolution < 1)
                 {
                     levelEvolution++;
                     pourcentage = 0;
                     score = 0;
+                    pc.isLeveledUp = true;
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
@@ -142,11 +145,12 @@ public class PoubelleIdentifier : MonoBehaviour
                 score++;
                 float pourcentage = (score/scoreForEvolution) * 100f;
 
-                if (pourcentage == 100)
+                if (pourcentage == 100 && levelEvolution < 1)
                 {
                     levelEvolution++;
                     pourcentage = 0;
                     score = 0;
+                    pc.isLeveledUp = true;
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);

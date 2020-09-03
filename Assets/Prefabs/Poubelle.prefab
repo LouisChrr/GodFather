@@ -81,7 +81,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
   position: {x: 0, y: 0}
-  moveSpeed: 10
+  moveSpeed: 5
+  moveSpeedLevelUp: 10
+  isLeveledUp: 0
   score: 0
   level: 0
   anim: {fileID: 0}

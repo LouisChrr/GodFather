@@ -8,6 +8,8 @@ public class PoubelleController : MonoBehaviour
     public Vector2 movement;
     public Vector2 position;
     public int moveSpeed = 1;
+    public int moveSpeedLevelUp = 10;
+    public bool isLeveledUp = false;
     //public Bin poubelle;
     public int score;
     public int level;
@@ -32,8 +34,17 @@ private void Awake() {
     void Update()
     {
         //transform.Translate(Vector2.left*Time.deltaTime);
-        position.x += movement.x * Time.deltaTime * moveSpeed;
-        position.y += movement.y * Time.deltaTime * moveSpeed;
+        if (isLeveledUp)
+        {
+            position.x += movement.x * Time.deltaTime * moveSpeedLevelUp;
+            position.y += movement.y * Time.deltaTime * moveSpeedLevelUp;
+        }
+        else
+        {
+            position.x += movement.x * Time.deltaTime * moveSpeed;
+            position.y += movement.y * Time.deltaTime * moveSpeed;
+        }
+
         transform.position = new Vector2(position.x, position.y);
         ModifScore();
         ChangeLevel();
