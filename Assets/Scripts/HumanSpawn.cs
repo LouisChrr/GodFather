@@ -12,7 +12,11 @@ public class HumanSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+         GameObject newHuman = Instantiate(human);
+
+            newHuman.transform.position = transform.position;
+            timer = 0f;
+            Destroy(newHuman, 180);
     }
 
     // Update is called once per frame

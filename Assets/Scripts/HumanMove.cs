@@ -28,6 +28,7 @@ public class HumanMove : MonoBehaviour
     private Animator anim;
 
     public Vector2 direction;
+    public float directionFloat;
     // Start is called before the first frame update
 private void Awake() {
     anim = this.GetComponent<Animator>();
@@ -39,6 +40,7 @@ private void Awake() {
         lastPos = position;
         posArriv.x = Random.Range(minMapX,maxMapX);
         posArriv.y = Random.Range(minMapY, maxMapY);
+        CheckOrientation();
         //print(posArriv.x + " ; " + posArriv.y);
     }
 
@@ -67,8 +69,63 @@ private void Awake() {
         timerR += Time.deltaTime;*/
     }
 
+private void FixedUpdate() {
+        //ResetAnimBools();
+
+         if(direction.x > 0.2f ){// SI A DROITE
+            if(direction.y > 0.2f){//SI DIAGO EN HAUT
+ 
+                anim.SetTrigger("TopRight");
+                
+            }else if(direction.y < -0.2f){//SI DIAGO EN BAS
+ 
+                anim.SetTrigger("FrontRight");   
+                
+            }else{// SI FULL DROITE
+                anim.SetTrigger("Right");
+            }
+ 
+        }else if(direction.x < -0.2f){//SI A GAUCHE
+            if(direction.y > 0.2f){//SI DIAGO EN HAUT
+ 
+                anim.SetTrigger("TopLeft");
+                
+            }else if(direction.y < -0.2f){//SI DIAGO EN BAS
+ 
+                anim.SetTrigger("FrontLeft");
+                
+            }else{// SI FULL GAUCHE
+ 
+                anim.SetTrigger("Left");
+            }
+ 
+ 
+         }else{//SI TOP OU BAS
+            if(direction.y > 0.2f) {//SI EN HAUT
+ 
+                anim.SetTrigger("Top");
+ 
+            }else if (direction.y < -0.2f ) {//SI EN BAS
+                anim.SetTrigger("Front");
+            }
+            else //IDLE
+            {
+                anim.SetTrigger("Front");
+            }
+        }
+    }
+
     private void CheckOrientation(){
+          //direction = transform.InverseTransformDirection(posArriv - new Vector2(transform.position.x, transform.position.y));
+
           direction = posArriv - new Vector2(transform.position.x, transform.position.y);
+          direction = direction.normalized;
+
+           // direction = new Vector2(Mathf.Atan2(posArriv.x,transform.position.x), Mathf.Atan2(posArriv.y,transform.position.y));
+
+        //direction = (transform.InverseTransformPoint(posArriv) - transform.InverseTransformPoint(new Vector2(transform.position.x, transform.position.y)));
+            //directionFloat = (posArriv.y - transform.position.y)/(posArriv.x - transform.position.x);
+
           //float angle = Vector2.Angle(transform.position, posArriv);
             //print(diff);
           
@@ -128,9 +185,9 @@ private void Awake() {
 
     private void newArriv()
     {
-        CheckOrientation();
         posArriv.x = Random.Range(minMapX, maxMapX);
         posArriv.y = Random.Range(minMapY, maxMapY);
+        CheckOrientation();
         //print(posArriv.x + " ; " + posArriv.y);
     }
 
