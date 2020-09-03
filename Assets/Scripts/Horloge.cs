@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class Horloge : MonoBehaviour
 {
 
-    [SerializeField]Text textHorloge;
+    [SerializeField] Text textHorloge;
+    [SerializeField] PoduimEndGame endGamePodium;
+    [SerializeField] GameObject uiGame;
+    [SerializeField] GameObject uiEndGame;
+    [SerializeField] ScorePlayerUI scorePlayer;
+
     int minute = 1;
     int seconde = 30;
 
@@ -14,7 +19,7 @@ public class Horloge : MonoBehaviour
 
     void Start()
     {
-        textHorloge.text = minute.ToString() + seconde.ToString(); 
+        textHorloge.text = minute.ToString() + seconde.ToString();
     }
 
     // Update is called once per frame
@@ -35,6 +40,9 @@ public class Horloge : MonoBehaviour
                 else
                 {
                     print("END");
+                    uiEndGame.SetActive(true);
+                    uiGame.SetActive(false);
+                    endGamePodium.ClassementPlayer( (int.Parse(scorePlayer.playerTextScoreUI[0].text)), (int.Parse(scorePlayer.playerTextScoreUI[1].text)), (int.Parse(scorePlayer.playerTextScoreUI[2].text)), (int.Parse(scorePlayer.playerTextScoreUI[3].text)), PreGameManager.Instance.poubelles.Count);
                 }
             }
             else

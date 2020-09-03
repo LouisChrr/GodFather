@@ -8,7 +8,7 @@ public class ScorePlayerUI : MonoBehaviour
 
     [SerializeField] GameObject[] playerScoreUI;
     [SerializeField] RectTransform[] playerScoreLevelProgressionUI;
-    [SerializeField] Text[] playerTextScoreUI;
+    public Text[] playerTextScoreUI;
 
     // Start is called before the first frame update
     void Start()
