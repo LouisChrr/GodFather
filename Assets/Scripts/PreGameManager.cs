@@ -28,7 +28,7 @@ public class PreGameManager : MonoBehaviour
         text.text = "0 player detected";
         poubelles = new List<PoubelleIdentifier>();
         poubellesUI = new List<PoubelleIdentifierUI>();
-        readyText.text = readyPlayers +"/0 players ready";
+        readyText.text = "";
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PreGameManager : MonoBehaviour
     public void OnPlayerJoined()
     {
         playersNumber+=1;
-        text.text = playersNumber + " players detected";
+        //text.text = playersNumber + " players detected";
         playerJoinedUI.AddPlayer();
         Invoke("ResetReadyCheck", 0.2f);
         
@@ -60,7 +60,7 @@ public class PreGameManager : MonoBehaviour
             pi.ID = number;
             number++;
         }
-        text.text = playersNumber + " players detected";
+        //text.text = playersNumber + " players detected";
     }
 
     public void OnPlayerReady(){
@@ -78,6 +78,7 @@ public class PreGameManager : MonoBehaviour
 
 
     IEnumerator StartGame(){
+        yield return new WaitForSeconds(1);
     readyText.text = "Starting game in 2.. ";
             yield return new WaitForSeconds(1);
     readyText.text = "Starting game in 1.. ";
