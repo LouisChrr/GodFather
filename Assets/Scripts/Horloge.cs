@@ -11,9 +11,10 @@ public class Horloge : MonoBehaviour
     [SerializeField] GameObject uiGame;
     [SerializeField] GameObject uiEndGame;
     [SerializeField] ScorePlayerUI scorePlayer;
+    [SerializeField] GameObject allPoubelleForPodium;
 
-    int minute = 1;
-    int seconde = 30;
+    int minute = 0;
+    int seconde = 5;
 
     float timer = 1f;
 
@@ -42,6 +43,7 @@ public class Horloge : MonoBehaviour
                     print("END");
                     uiEndGame.SetActive(true);
                     uiGame.SetActive(false);
+                    allPoubelleForPodium.SetActive(true);
                     endGamePodium.ClassementPlayer( (int.Parse(scorePlayer.playerTextScoreUI[0].text)), (int.Parse(scorePlayer.playerTextScoreUI[1].text)), (int.Parse(scorePlayer.playerTextScoreUI[2].text)), (int.Parse(scorePlayer.playerTextScoreUI[3].text)), PreGameManager.Instance.poubelles.Count);
                 }
             }
