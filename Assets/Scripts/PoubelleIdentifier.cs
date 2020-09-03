@@ -10,100 +10,162 @@ public class PoubelleIdentifier : MonoBehaviour
     bool ready = false;
     bool canBeReady = false;
     private PoubelleController pc;
+    int levelEvolution = 0;
+    int scoreForEvolution = 10;
+    int score = 0;
+
     // Start is called before the first frame update
 
- private void Awake() {
-  pc = this.GetComponent<PoubelleController>();
-}
+    private void Awake()
+    {
+        pc = this.GetComponent<PoubelleController>();
+    }
 
     void Start()
-      {
+    {
         PreGameManager.Instance.poubelles.Add(this);
         ID = PreGameManager.Instance.playersNumber;
-        PoubelleSprite = PreGameManager.Instance.sprites[ID-1];
-      pc.anim.runtimeAnimatorController = PreGameManager.Instance.anims[ID-1];
+        PoubelleSprite = PreGameManager.Instance.sprites[ID - 1];
+        pc.anim.runtimeAnimatorController = PreGameManager.Instance.anims[ID - 1];
         Invoke("CanBeReady", 0.5f);
+    }
 
-
-      }
-
-    void CanBeReady(){
+    void CanBeReady()
+    {
         canBeReady = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void OnDeviceLost(){
 
     }
 
-    void OnDeviceRegained(){
+    void OnDeviceLost()
+    {
+
+    }
+
+    void OnDeviceRegained()
+    {
 
 
     }
 
     void OnGrab()
     {
-    if(PreGameManager.Instance.hasGameStarted == true || ready == true || canBeReady == false) return;
+        if (PreGameManager.Instance.hasGameStarted == true || ready == true || canBeReady == false) return;
         PreGameManager.Instance.OnPlayerReady();
         ready = true;
 
-        PreGameManager.Instance.poubellesUI[ID-1].readyText.SetActive(true);
+        PreGameManager.Instance.poubellesUI[ID - 1].readyText.SetActive(true);
         //print("Grab!");
     }
 
 
-    private void OnCollisionEnter2D(Collision2D other) {
-      
-            
+    private void OnCollisionEnter2D(Collision2D other)
+    {
 
-
-          if(other.gameObject.tag == "Green"){
-              if(ID == 3){
+        if (other.gameObject.tag == "Green")
+        {
+            if (ID == 3)
+            {
                 Destroy(other.gameObject);
-                                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);
-                         }else{
-                  PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
-                  Destroy(other.gameObject);
-                         }
-          }else if(other.gameObject.tag == "Yellow"){
-          if(ID == 2){
-                            PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);
-                            Destroy(other.gameObject);
-                          }else{
-                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
-                Destroy(other.gameObject);
-                          }
-          }else if(other.gameObject.tag == "Brown"){
-              if(ID == 4){
-                             PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);   
-                             Destroy(other.gameObject);
-                        }else{
-                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
-                Destroy(other.gameObject);
-                        }
-          }else if(other.gameObject.tag == "Blue"){
-                if(ID == 1){
-              PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);
-              Destroy(other.gameObject);
-                }else{
-              PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
-              Destroy(other.gameObject);
+                score++;
+                int pourcentage = (score / scoreForEvolution) * 100 ;
+                if (pourcentage == 100)
+                {
+                    levelEvolution++;
+                    pourcentage = 0;
+                    score = 0;
                 }
-          }else if(other.gameObject.tag == "Human"){
-
-                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage , 1);
+            }
+            else
+            {
+                score--;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
                 Destroy(other.gameObject);
-          }
-
-          
+            }
+        }
+        else if (other.gameObject.tag == "Yellow")
+        {
+            if (ID == 2)
+            {
+                score++;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                if (pourcentage == 100)
+                {
+                    levelEvolution++;
+                    pourcentage = 0;
+                    score = 0;
+                }
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                score--;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
+                Destroy(other.gameObject);
+            }
+        }
+        else if (other.gameObject.tag == "Brown")
+        {
+            if (ID == 4)
+            {
+                score++;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                if (pourcentage == 100)
+                {
+                    levelEvolution++;
+                    pourcentage = 0;
+                    score = 0;
+                }
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                score--;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
+                Destroy(other.gameObject);
+            }
+        }
+        else if (other.gameObject.tag == "Blue")
+        {
+            if (ID == 1)
+            {
+                score++;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                if (pourcentage == 100)
+                {
+                    levelEvolution++;
+                    pourcentage = 0;
+                    score = 0;
+                }
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                score--;
+                int pourcentage = (score / scoreForEvolution) * 100;
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
+                Destroy(other.gameObject);
+            }
+        }
+        else if (other.gameObject.tag == "Human")
+        {
+            score--;
+            int pourcentage = (score / scoreForEvolution) * 100;
+            PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
+            Destroy(other.gameObject);
+        }
 
     }
-
-  
 
 }
