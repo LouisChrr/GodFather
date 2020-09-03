@@ -9,13 +9,19 @@ public class PoubelleIdentifier : MonoBehaviour
     private Sprite PoubelleSprite;
     bool ready = false;
     bool canBeReady = false;
+    private PoubelleController pc;
     // Start is called before the first frame update
+
+ private void Awake() {
+  pc = this.GetComponent<PoubelleController>();
+}
+
     void Start()
       {
         PreGameManager.Instance.poubelles.Add(this);
         ID = PreGameManager.Instance.playersNumber;
         PoubelleSprite = PreGameManager.Instance.sprites[ID-1];
-
+      pc.anim.runtimeAnimatorController = PreGameManager.Instance.anims[ID-1];
         Invoke("CanBeReady", 0.5f);
 
 

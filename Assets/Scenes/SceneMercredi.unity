@@ -1133,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750083621115420925, guid: 2f3e40cca11d87841a467055e414661e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 750083621115420925, guid: 2f3e40cca11d87841a467055e414661e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2106,13 +2106,13 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: 70dd207196fd13994a17320a6ce47a90, type: 3}
   - {fileID: 21300000, guid: a294f418cb1f1145e86b7d65db77a0c2, type: 3}
-  - {fileID: 21300000, guid: e94a746db2a66bb65919eb70ef2be7b8, type: 3}
   - {fileID: 21300000, guid: 22a9337063a2b0d219b505b2ae62f870, type: 3}
+  - {fileID: 21300000, guid: e94a746db2a66bb65919eb70ef2be7b8, type: 3}
   anims:
   - {fileID: 9100000, guid: 6b22a4b30fa3d038d8d3da0233816800, type: 2}
-  - {fileID: 9100000, guid: 603c2ef405ddfa72f9ac3d316e7e4c49, type: 2}
-  - {fileID: 9100000, guid: 1d38e56fa564a101db6efd5e9abf0f64, type: 2}
   - {fileID: 9100000, guid: 6754cd3b2cc3e7acfa12c569e3259260, type: 2}
+  - {fileID: 9100000, guid: 1d38e56fa564a101db6efd5e9abf0f64, type: 2}
+  - {fileID: 9100000, guid: 603c2ef405ddfa72f9ac3d316e7e4c49, type: 2}
   poubelles: []
   poubellesUI: []
   text: {fileID: 295959918}
@@ -2174,7 +2174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325093778
 GameObject:

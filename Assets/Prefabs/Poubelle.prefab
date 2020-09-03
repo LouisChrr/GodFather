@@ -82,6 +82,7 @@ MonoBehaviour:
   moveSpeed: 10
   score: 0
   level: 0
+  anim: {fileID: 0}
 --- !u!114 &-5494045953233253496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +157,7 @@ Animator:
   m_GameObject: {fileID: 6081970578599073574}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b22a4b30fa3d038d8d3da0233816800, type: 2}
+  m_Controller: {fileID: 9100000, guid: 603c2ef405ddfa72f9ac3d316e7e4c49, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

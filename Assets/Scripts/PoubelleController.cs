@@ -13,13 +13,18 @@ public class PoubelleController : MonoBehaviour
     public int level;
     public Animator anim;
 
+private void Awake() {
+    anim = GetComponent<Animator>();
+}
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        
         position = transform.position;
         score = 0;
         level = 0;
+        
        // poubelle = new Bin();
     }
 
@@ -39,9 +44,9 @@ public class PoubelleController : MonoBehaviour
     private void FixedUpdate() {
         //ResetAnimBools();
 
-        if(movement.x > 0.15f ){// SI A DROITE
-            if(movement.y > 0.1f){//SI EN HAUT
-                if(movement.y < 0.4f){//SI DIAGO
+         if(movement.x > 0.2f ){// SI A DROITE
+            if(movement.y > 0.2f){//SI DIAGO EN HAUT
+               
 
                 anim.SetBool("Top", false);
                 anim.SetBool("Front", false);
@@ -50,12 +55,11 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("Right", false);
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("Left", false);
-
+ 
                 anim.SetBool("TopRight", true);
-                }
-            }else if(movement.y < -0.1f){//SI EN BAS
-                if(movement.y > -0.4f){//SI DIAGO
-
+                
+            }else if(movement.y < -0.2f){//SI DIAGO EN BAS
+ 
                 anim.SetBool("Top", false);
                 anim.SetBool("Front", false);
                 anim.SetBool("FrontLeft", false);
@@ -63,11 +67,11 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("Right", false);
                 anim.SetBool("TopRight", false);
                 anim.SetBool("Left", false);
-
+ 
                 anim.SetBool("FrontRight", true);   
-                }
+                
             }else{// SI FULL DROITE
-
+ 
                 anim.SetBool("Top", false);
                 anim.SetBool("Front", false);
                 anim.SetBool("FrontLeft", false);
@@ -75,17 +79,13 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("TopRight", false);
                 anim.SetBool("Left", false);
-
+ 
                 anim.SetBool("Right", true);
             }
-
-            
-
-        }else if(movement.x < 0.15f){//SI A GAUCHE
-
-            if(movement.y > 0.1f){//SI EN HAUT
-                if(movement.y < 0.4f){//SI DIAGO
-
+ 
+        }else if(movement.x < -0.2f){//SI A GAUCHE
+            if(movement.y > 0.2f){//SI DIAGO EN HAUT
+ 
                 anim.SetBool("Top", false);
                 anim.SetBool("Front", false);
                 anim.SetBool("FrontLeft", false);
@@ -93,11 +93,10 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("TopRight", false);
                 anim.SetBool("Left", false);
-
+ 
                 anim.SetBool("TopLeft", true);
-                }
-            }else if(movement.y < -0.1f){//SI EN BAS
-                if(movement.y > -0.4f){//SI DIAGO
+                
+            }else if(movement.y < -0.2f){//SI DIAGO EN BAS
                         
                 anim.SetBool("Top", false);
                 anim.SetBool("Front", false);
@@ -106,9 +105,9 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("TopRight", false);
                 anim.SetBool("Left", false);
-
+ 
                 anim.SetBool("FrontLeft", true);
-                }
+                
             }else{// SI FULL GAUCHE
                 anim.SetBool("Top", false);
                 anim.SetBool("Front", false);
@@ -117,17 +116,15 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("Right", false);
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("TopRight", false);
-
-
-
+ 
                 anim.SetBool("Left", true);
             }
-
-
-        }else{//SI TOP OU BAS
-                if(movement.y >0){//SI EN HAUT
+ 
+ 
+         }else{//SI TOP OU BAS
+            if(movement.y > 0.2f) {//SI EN HAUT
            
-
+ 
                 anim.SetBool("Front", false);
                 anim.SetBool("FrontLeft", false);
                 anim.SetBool("TopLeft", false);
@@ -135,10 +132,10 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("TopRight", false);
                 anim.SetBool("Left", false);
-
+ 
                 anim.SetBool("Top", true);
-
-                }else{//SI EN BAS
+ 
+            }else if (movement.y < -0.2f ) {//SI EN BAS
                 anim.SetBool("Top", false);
                 anim.SetBool("FrontLeft", false);
                 anim.SetBool("TopLeft", false);
@@ -146,16 +143,23 @@ public class PoubelleController : MonoBehaviour
                 anim.SetBool("FrontRight", false);
                 anim.SetBool("TopRight", false);
                 anim.SetBool("Left", false);
-
-
+ 
+ 
                 anim.SetBool("Front", true);
-
-                
-
-
-                
-
-                }
+ 
+            }
+            else //IDLE
+            {
+                anim.SetBool("Top", false);
+                anim.SetBool("FrontLeft", false);
+                anim.SetBool("TopLeft", false);
+                anim.SetBool("Right", false);
+                anim.SetBool("FrontRight", false);
+                anim.SetBool("TopRight", false);
+                anim.SetBool("Left", false);
+ 
+                anim.SetBool("Front", true);
+            }
         }
     }
 
