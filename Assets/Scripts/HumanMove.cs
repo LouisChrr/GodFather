@@ -25,15 +25,21 @@ public class HumanMove : MonoBehaviour
     public float minMapY = -10f;
     public float maxMapY = 10f;
     public Vector2 posArriv;
+    private Animator anim;
 
+    public Vector2 direction;
     // Start is called before the first frame update
+private void Awake() {
+    anim = this.GetComponent<Animator>();
+}
+
     void Start()
     {
         position = transform.position;
         lastPos = position;
         posArriv.x = Random.Range(minMapX,maxMapX);
         posArriv.y = Random.Range(minMapY, maxMapY);
-        print(posArriv.x + " ; " + posArriv.y);
+        //print(posArriv.x + " ; " + posArriv.y);
     }
 
     // Update is called once per frame
@@ -61,7 +67,13 @@ public class HumanMove : MonoBehaviour
         timerR += Time.deltaTime;*/
     }
 
+    private void CheckOrientation(){
+          direction = posArriv - new Vector2(transform.position.x, transform.position.y);
+          //float angle = Vector2.Angle(transform.position, posArriv);
+            //print(diff);
+          
 
+    }
     private void Move()
     {
         /*
@@ -116,9 +128,10 @@ public class HumanMove : MonoBehaviour
 
     private void newArriv()
     {
+        CheckOrientation();
         posArriv.x = Random.Range(minMapX, maxMapX);
         posArriv.y = Random.Range(minMapY, maxMapY);
-        print(posArriv.x + " ; " + posArriv.y);
+        //print(posArriv.x + " ; " + posArriv.y);
     }
 
     private void stopMove()
