@@ -28,7 +28,7 @@ public class ScorePlayerUI : MonoBehaviour
 
     public void UpdateScoreOfPlayer(int idPlayer, int pourcentageOfLevelBar, int score)
     {
-        playerTextScoreUI[idPlayer - 1].text = score.ToString();
+        playerTextScoreUI[idPlayer - 1].text = (int.Parse(playerTextScoreUI[idPlayer - 1].text) + score).ToString();
         playerScoreLevelProgressionUI[idPlayer - 1].sizeDelta = new Vector2 ( ((float)pourcentageOfLevelBar / 100) * 615, playerScoreLevelProgressionUI[idPlayer - 1].sizeDelta.y);
     }
 
