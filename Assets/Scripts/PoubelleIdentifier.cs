@@ -53,7 +53,57 @@ public class PoubelleIdentifier : MonoBehaviour
         ready = true;
 
         PreGameManager.Instance.poubellesUI[ID-1].readyText.SetActive(true);
-        print("Grab!");
+        //print("Grab!");
     }
+
+
+    private void OnCollisionEnter2D(Collision2D other) {
+      
+            
+
+
+          if(other.gameObject.tag == "Green"){
+              if(ID == 3){
+                Destroy(other.gameObject);
+                                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);
+                         }else{
+                  PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
+                  Destroy(other.gameObject);
+                         }
+          }else if(other.gameObject.tag == "Yellow"){
+          if(ID == 2){
+                            PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);
+                            Destroy(other.gameObject);
+                          }else{
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
+                Destroy(other.gameObject);
+                          }
+          }else if(other.gameObject.tag == "Brown"){
+              if(ID == 4){
+                             PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);   
+                             Destroy(other.gameObject);
+                        }else{
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
+                Destroy(other.gameObject);
+                        }
+          }else if(other.gameObject.tag == "Blue"){
+                if(ID == 1){
+              PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, 1);
+              Destroy(other.gameObject);
+                }else{
+              PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
+              Destroy(other.gameObject);
+                }
+          }else if(other.gameObject.tag == "Human"){
+
+                PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, 20, -1);
+                Destroy(other.gameObject);
+          }
+
+          
+
+    }
+
+  
 
 }

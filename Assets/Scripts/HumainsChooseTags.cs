@@ -23,7 +23,7 @@ public class HumainsChooseTags : MonoBehaviour
                 gameObject.tag = "Green";
                 break;
             case 4:
-                gameObject.tag = "None";
+                gameObject.tag = "Human";
                 break;
         }
 

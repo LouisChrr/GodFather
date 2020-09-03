@@ -42,7 +42,7 @@ public class PreGameManager : MonoBehaviour
         playersNumber+=1;
         //text.text = playersNumber + " players detected";
         playerJoinedUI.AddPlayer();
-        Invoke("ResetReadyCheck", 0.2f);
+        Invoke("ResetReadyCheck", 0.1f);
         
     }
 

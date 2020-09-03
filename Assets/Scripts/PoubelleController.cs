@@ -183,7 +183,7 @@ private void Awake() {
 
     void OnGrab()
     {
-        print("Grab!");
+        //print("Grab!");
     }
 
     void ModifScore()
