@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HumanSpawn : MonoBehaviour
 {
-    public float timeSpawn = 5f;
+    public float timeSpawn = 1000f;
     public float timer = 0f;
     public GameObject human;
     public int orient;
