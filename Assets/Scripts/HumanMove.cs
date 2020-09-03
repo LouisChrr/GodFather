@@ -13,9 +13,12 @@ public class HumanMove : MonoBehaviour
     public float timerRot = 5f;
     public float timerR = 0f;
 
-    public float timeImmo = 2f;
+    public float timeImmo = 5f;
     public float timeI = 0f;
     public Vector2 lastPos;
+
+    public float timeStop = 2f;
+    public float timeS = 0f;
 
     public float minMapX = -10f;
     public float maxMapX = 10f;
@@ -39,9 +42,10 @@ public class HumanMove : MonoBehaviour
         Move();
         if (isBlocked())
         {
-            timeI = 0;
+           // stopMove();
             print("pop");
             newArriv();
+            
         }
 
        /* if(position == posArriv)
@@ -69,8 +73,8 @@ public class HumanMove : MonoBehaviour
             transform.position += Vector3.down * humanSpeed * Time.deltaTime;
         if(ori == 3)
             transform.position += Vector3.left * humanSpeed * Time.deltaTime;*/
-
-        transform.position = Vector2.MoveTowards(transform.position, posArriv, humanSpeed * Time.deltaTime);
+            
+        transform.position = Vector2.Lerp(transform.position, posArriv, Time.deltaTime/10 * humanSpeed);
     }
 
     private void Rotation()
@@ -104,6 +108,7 @@ public class HumanMove : MonoBehaviour
 
         if(timeI > timeImmo)
         {
+            timeI = 0;
             return true;
         }
         return false;
@@ -114,5 +119,15 @@ public class HumanMove : MonoBehaviour
         posArriv.x = Random.Range(minMapX, maxMapX);
         posArriv.y = Random.Range(minMapY, maxMapY);
         print(posArriv.x + " ; " + posArriv.y);
+    }
+
+    private void stopMove()
+    {
+        timeS += Time.deltaTime;
+        while (timeS < timeStop)
+        {
+            position = transform.position;
+        }
+
     }
 }
