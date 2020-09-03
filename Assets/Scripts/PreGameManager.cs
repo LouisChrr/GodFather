@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class PreGameManager : MonoBehaviour
 {
+    public CinemachineTargetGroup ctg;
     public List<GameObject> MenuObjects;
     public List<GameObject> GameObjects;
     public ScorePlayerUI spUI;
@@ -93,9 +95,22 @@ public class PreGameManager : MonoBehaviour
 
         go.SetActive(true);
     }
-
+int i = 0;
     foreach(PoubelleIdentifier pb in poubelles){
         pb.gameObject.transform.position = playerSpawnPos[pb.ID - 1].position;
+        CinemachineTargetGroup.Target ctgt = new CinemachineTargetGroup.Target();
+        ctgt.target = pb.gameObject.transform;
+        ctgt.radius = 1;
+        ctgt.weight = 1;
+        ctg.m_Targets[i] = ctgt;
+        i++;
+    }
+    while(i<4){
+        CinemachineTargetGroup.Target ctgt = new CinemachineTargetGroup.Target();
+        ctgt.radius = 0;
+        ctgt.weight = 0;
+        ctg.m_Targets[i] = ctgt;
+        i++;
     }
 
     spUI.DisplayUiForXPlayers(playersNumber);
