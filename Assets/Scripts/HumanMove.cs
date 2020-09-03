@@ -13,7 +13,7 @@ public class HumanMove : MonoBehaviour
     public float timerRot = 5f;
     public float timerR = 0f;
 
-    public float timeImmo = 2f;
+    public float timeImmo = 5f;
     public float timeI = 0f;
     public Vector2 lastPos;
 
@@ -39,7 +39,6 @@ public class HumanMove : MonoBehaviour
         Move();
         if (isBlocked())
         {
-            timeI = 0;
             print("pop");
             newArriv();
         }
@@ -69,8 +68,8 @@ public class HumanMove : MonoBehaviour
             transform.position += Vector3.down * humanSpeed * Time.deltaTime;
         if(ori == 3)
             transform.position += Vector3.left * humanSpeed * Time.deltaTime;*/
-
-        transform.position = Vector2.MoveTowards(transform.position, posArriv, humanSpeed * Time.deltaTime);
+            
+        transform.position = Vector2.Lerp(transform.position, posArriv, Time.deltaTime/10 * humanSpeed);
     }
 
     private void Rotation()
@@ -104,6 +103,7 @@ public class HumanMove : MonoBehaviour
 
         if(timeI > timeImmo)
         {
+            timeI = 0;
             return true;
         }
         return false;
