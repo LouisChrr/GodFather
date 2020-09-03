@@ -8,6 +8,7 @@ public class HumainsChooseTags : MonoBehaviour
     void Start()
     {
         int randTag = Random.Range(0,4);
+        randTag = 0;
         switch (randTag)
         {
             case 0 :

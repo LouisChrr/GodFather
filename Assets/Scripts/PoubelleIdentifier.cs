@@ -27,11 +27,14 @@ public class PoubelleIdentifier : MonoBehaviour
         ID = PreGameManager.Instance.playersNumber;
         PoubelleSprite = PreGameManager.Instance.sprites[ID - 1];
         pc.anim.runtimeAnimatorController = PreGameManager.Instance.anims[ID - 1];
-        Invoke("CanBeReady", 0.5f);
+        transform.position = PreGameManager.Instance.playerSpawnPos[ID - 1].position;
+        pc.position = PreGameManager.Instance.playerSpawnPos[ID - 1].position;
+        Invoke("CanBeReady", 0.2f);
     }
 
     void CanBeReady()
     {
+        transform.position = PreGameManager.Instance.playerSpawnPos[ID - 1].position;
         canBeReady = true;
     }
 
@@ -79,6 +82,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     pourcentage = 0;
                     score = 0;
                     pc.isLeveledUp = true;
+                    pc.anim.SetBool("ISLVL2", true);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage , 1);
             }
@@ -102,6 +106,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     pourcentage = 0;
                     score = 0;
                     pc.isLeveledUp = true;
+                    pc.anim.SetBool("ISLVL2", true);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
@@ -126,6 +131,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     pourcentage = 0;
                     score = 0;
                     pc.isLeveledUp = true;
+                    pc.anim.SetBool("ISLVL2", true);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
@@ -151,6 +157,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     pourcentage = 0;
                     score = 0;
                     pc.isLeveledUp = true;
+                    pc.anim.SetBool("ISLVL2", true);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);

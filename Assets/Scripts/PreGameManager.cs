@@ -15,6 +15,7 @@ public class PreGameManager : MonoBehaviour
     public List<RuntimeAnimatorController> anims;
     public List<PoubelleIdentifier> poubelles;
     public List<PoubelleIdentifierUI> poubellesUI;
+    public List<Transform> playerSpawnPos;
 
     public static PreGameManager Instance;
     public Text text;
@@ -83,7 +84,7 @@ public class PreGameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
     readyText.text = "Starting game in 1.. ";
             yield return new WaitForSeconds(1);
-            hasGameStarted = true;
+            
     foreach(GameObject go in MenuObjects){
 
         go.SetActive(false);
@@ -93,7 +94,14 @@ public class PreGameManager : MonoBehaviour
         go.SetActive(true);
     }
 
+    foreach(PoubelleIdentifier pb in poubelles){
+        pb.gameObject.transform.position = playerSpawnPos[pb.ID - 1].position;
+    }
+
     spUI.DisplayUiForXPlayers(playersNumber);
+
+
+    hasGameStarted = true;
     // DESACTIVER TOUT LE RESTE
     // TODO: EMpecher les poubelles de bouger si game a pas commencé
 

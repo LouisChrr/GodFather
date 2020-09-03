@@ -23,7 +23,7 @@ private void Awake() {
     void Start()
     {
         
-        position = transform.position;
+        //position = PreGameManager.Instance.playerSpawnPos[ID - 1].position;
         score = 0;
         level = 0;
         
@@ -33,6 +33,8 @@ private void Awake() {
     // Update is called once per frame
     void Update()
     {
+            if(PreGameManager.Instance.hasGameStarted == false) return;
+
         //transform.Translate(Vector2.left*Time.deltaTime);
         if (isLeveledUp)
         {
@@ -46,10 +48,17 @@ private void Awake() {
         }
 
         transform.position = new Vector2(position.x, position.y);
-        ModifScore();
-        ChangeLevel();
-        //print(level);
+        if(movement.x < 0.05f && movement.y < 0.05f && movement.x > -0.05f && movement.y > -0.05f){
 
+             anim.SetBool("IsWalking", false);
+        }else{
+                anim.SetBool("IsWalking", true);
+        }
+
+
+        ModifScore();
+        //ChangeLevel();
+        //print(level);
     }
 
     private void FixedUpdate() {
@@ -215,13 +224,15 @@ private void Awake() {
         {
             level = 0;
         }
-        else if (score >= 10 && score < 20)
+        else if (score >15)
         {
+            if(level == 0){
+                print("level up!");
+                
+                anim.SetBool("ISLVL2", true);
+            }
             level = 1;
         }
-        else
-        {
-            level = 2;
-        }
+        
     }
 }
