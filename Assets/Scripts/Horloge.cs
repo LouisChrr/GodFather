@@ -13,8 +13,8 @@ public class Horloge : MonoBehaviour
     [SerializeField] ScorePlayerUI scorePlayer;
     [SerializeField] GameObject allPoubelleForPodium;
 
-    int minute = 0;
-    int seconde = 5;
+    int minute = 1;
+    int seconde = 30;
 
     float timer = 1f;
 
