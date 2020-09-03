@@ -11,8 +11,8 @@ public class PoubelleIdentifier : MonoBehaviour
     bool canBeReady = false;
     private PoubelleController pc;
     int levelEvolution = 0;
-    int scoreForEvolution = 10;
-    int score = 0;
+    float scoreForEvolution = 10;
+    float score = 0;
 
     // Start is called before the first frame update
 
@@ -72,7 +72,7 @@ public class PoubelleIdentifier : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 score++;
-                int pourcentage = (score / scoreForEvolution) * 100 ;
+                float pourcentage = (score / scoreForEvolution) * 100 ;
                 if (pourcentage == 100)
                 {
                     levelEvolution++;
@@ -84,7 +84,7 @@ public class PoubelleIdentifier : MonoBehaviour
             else
             {
                 score--;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score / scoreForEvolution) * 100;
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
                 Destroy(other.gameObject);
             }
@@ -94,7 +94,7 @@ public class PoubelleIdentifier : MonoBehaviour
             if (ID == 2)
             {
                 score++;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score / scoreForEvolution) * 100;
                 if (pourcentage == 100)
                 {
                     levelEvolution++;
@@ -107,7 +107,7 @@ public class PoubelleIdentifier : MonoBehaviour
             else
             {
                 score--;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score / scoreForEvolution) * 100;
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
                 Destroy(other.gameObject);
             }
@@ -117,7 +117,7 @@ public class PoubelleIdentifier : MonoBehaviour
             if (ID == 4)
             {
                 score++;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score / scoreForEvolution) * 100;
                 if (pourcentage == 100)
                 {
                     levelEvolution++;
@@ -130,7 +130,7 @@ public class PoubelleIdentifier : MonoBehaviour
             else
             {
                 score--;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score / scoreForEvolution) * 100;
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
                 Destroy(other.gameObject);
             }
@@ -140,7 +140,8 @@ public class PoubelleIdentifier : MonoBehaviour
             if (ID == 1)
             {
                 score++;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score/scoreForEvolution) * 100f;
+
                 if (pourcentage == 100)
                 {
                     levelEvolution++;
@@ -149,19 +150,24 @@ public class PoubelleIdentifier : MonoBehaviour
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
+                
             }
             else
             {
                 score--;
-                int pourcentage = (score / scoreForEvolution) * 100;
+                float pourcentage = (score / scoreForEvolution) * 100;
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
                 Destroy(other.gameObject);
+                
             }
+
+          
+
         }
         else if (other.gameObject.tag == "Human")
         {
             score--;
-            int pourcentage = (score / scoreForEvolution) * 100;
+            float pourcentage = (score / scoreForEvolution) * 100;
             PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, -1);
             Destroy(other.gameObject);
         }
