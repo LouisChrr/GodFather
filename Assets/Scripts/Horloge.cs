@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Horloge : MonoBehaviour
@@ -40,7 +38,6 @@ public class Horloge : MonoBehaviour
                 }
                 else
                 {
-                    print("END");
                     uiEndGame.SetActive(true);
                     uiGame.SetActive(false);
                     allPoubelleForPodium.SetActive(true);
