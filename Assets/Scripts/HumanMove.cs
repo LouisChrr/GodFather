@@ -42,7 +42,7 @@ public class HumanMove : MonoBehaviour
         Move();
         if (isBlocked())
         {
-           // stopMove();
+            //stopMove();
             print("pop");
             newArriv();
             
