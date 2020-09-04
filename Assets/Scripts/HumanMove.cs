@@ -33,6 +33,7 @@ public class HumanMove : MonoBehaviour
 
     public Vector2 direction;
     public float directionFloat;
+    
 
     private Rigidbody2D _rigidbody2D;
 
