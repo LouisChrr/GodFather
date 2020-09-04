@@ -15,10 +15,13 @@ public class PoubelleController : MonoBehaviour
     public int level;
     public Animator anim;
 
-private void Awake() {
-    anim = GetComponent<Animator>();
-}
+    private Rigidbody2D _rigidbody2D;
 
+    private void Awake() {
+    anim = GetComponent<Animator>();
+    _rigidbody2D = GetComponent<Rigidbody2D>();
+}
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,16 +41,18 @@ private void Awake() {
         //transform.Translate(Vector2.left*Time.deltaTime);
         if (isLeveledUp)
         {
-            position.x += movement.x * Time.deltaTime * moveSpeedLevelUp;
-            position.y += movement.y * Time.deltaTime * moveSpeedLevelUp;
+            _rigidbody2D.velocity = movement * moveSpeedLevelUp;
+            //position.x += movement.x * Time.deltaTime * moveSpeedLevelUp;
+           // position.y += movement.y * Time.deltaTime * moveSpeedLevelUp;
         }
         else
         {
-            position.x += movement.x * Time.deltaTime * moveSpeed;
-            position.y += movement.y * Time.deltaTime * moveSpeed;
+            _rigidbody2D.velocity = movement * moveSpeed;
+            //position.x += movement.x * Time.deltaTime * moveSpeed;
+            //position.y += movement.y * Time.deltaTime * moveSpeed;
         }
 
-        transform.position = new Vector2(position.x, position.y);
+        //transform.position = new Vector2(position.x, position.y);
         if(movement.x < 0.05f && movement.y < 0.05f && movement.x > -0.05f && movement.y > -0.05f){
 
              anim.SetBool("IsWalking", false);

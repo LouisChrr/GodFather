@@ -29,9 +29,13 @@ public class HumanMove : MonoBehaviour
 
     public Vector2 direction;
     public float directionFloat;
+
+    private Rigidbody2D _rigidbody2D;
+
     // Start is called before the first frame update
 private void Awake() {
     anim = this.GetComponent<Animator>();
+    _rigidbody2D = GetComponent<Rigidbody2D>();
 }
 
     void Start()
@@ -142,8 +146,18 @@ private void FixedUpdate() {
             transform.position += Vector3.down * humanSpeed * Time.deltaTime;
         if(ori == 3)
             transform.position += Vector3.left * humanSpeed * Time.deltaTime;*/
-            
-        transform.position = Vector2.Lerp(transform.position, posArriv, Time.deltaTime/10 * humanSpeed);
+
+        Vector2 moveDir = posArriv - (Vector2)_rigidbody2D.position;
+        _rigidbody2D.velocity = moveDir.normalized * humanSpeed;
+
+        float distance = (posArriv - (Vector2)_rigidbody2D.position).magnitude;
+        if(distance <= 0.5f)
+        {
+            _rigidbody2D.velocity = Vector2.zero;
+        }
+
+
+        //transform.position = Vector2.Lerp(transform.position, posArriv, Time.deltaTime/10 * humanSpeed);
     }
 
     private void Rotation()
