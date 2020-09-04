@@ -2287,7 +2287,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 6081970578599073574, guid: 6d8f411489bd4e9418c3cfa54dc5f366, type: 3}
+  m_PlayerPrefab: {fileID: 8048022165325866214, guid: 2f36afe01622a43619a74d608dfd37f7, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -5329,7 +5329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804504087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5686,11 +5686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ed5e2b36860ba4d929be924f83d809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listeAnimator:
-  - {fileID: 413397270}
-  - {fileID: 1464022178}
-  - {fileID: 430084363}
-  - {fileID: 1015785122}
+  listeImage: []
   blue: {fileID: 9100000, guid: 6b22a4b30fa3d038d8d3da0233816800, type: 2}
   yellow: {fileID: 9100000, guid: 6754cd3b2cc3e7acfa12c569e3259260, type: 2}
   brown: {fileID: 9100000, guid: 603c2ef405ddfa72f9ac3d316e7e4c49, type: 2}
@@ -10779,7 +10775,6 @@ MonoBehaviour:
   uiGame: {fileID: 527196318}
   uiEndGame: {fileID: 906627729}
   scorePlayer: {fileID: 527196320}
-  allPoubelleForPodium: {fileID: 133570498}
   allGameObjectToDisable: []
 --- !u!114 &2142648679
 MonoBehaviour:
