@@ -9,7 +9,7 @@ public class HumanSpawn : MonoBehaviour
     public GameObject human;
     public int orient;
     public int nbHuman;
-    public int nbMaxHuman = 20;
+    //public int nbMaxHuman = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +26,13 @@ public class HumanSpawn : MonoBehaviour
     {
         if(timer > timeSpawn)
         {
-            if (nbHuman < nbMaxHuman)
-            {
+            /*if (nbHuman < nbMaxHuman)
+            {*/
                 GameObject newHuman = Instantiate(human);
                 newHuman.transform.position = transform.position;
                 nbHuman++;
                 timer = 0f;
-            }
+           // }
             //Destroy(newHuman, 180);
         }
         timer += Time.deltaTime;

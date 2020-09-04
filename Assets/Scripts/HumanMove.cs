@@ -13,7 +13,7 @@ public class HumanMove : MonoBehaviour
     public float timerRot = 5f;
     public float timerR = 0f;
 
-    public float timeImmo = 5f;
+    public float timeImmo = 1f;
     public float timeI = 0f;
     public Vector2 lastPos;
 
