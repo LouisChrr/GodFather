@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7349310236009077619}
   - component: {fileID: 5307877934397387889}
   - component: {fileID: 2529318312440390774}
+  - component: {fileID: 6948602142690550635}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -110,10 +111,8 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0}
   timeStop: 2
   timeS: 0
-  minMapX: -10
-  maxMapX: 10
-  minMapY: -10
-  maxMapY: 10
+  minLimPos: {x: 0, y: 0}
+  maxLimPos: {x: 0, y: 0}
   posArriv: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   directionFloat: 0
@@ -164,3 +163,24 @@ CapsuleCollider2D:
   m_Offset: {x: -0.041202724, y: -0.11101836}
   m_Size: {x: 0.2911352, y: 0.5269064}
   m_Direction: 0
+--- !u!50 &6948602142690550635
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072294961877154845}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
