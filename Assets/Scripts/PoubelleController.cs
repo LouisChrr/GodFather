@@ -17,6 +17,14 @@ public class PoubelleController : MonoBehaviour
 
     private Rigidbody2D _rigidbody2D;
 
+    public AudioSource moveSound;
+    public AudioSource bonHuman;
+    public AudioSource badHuman;
+    public AudioSource banc;
+    public AudioSource bush;
+    public AudioSource evolve;
+    public AudioSource sac;
+
     private void Awake() {
     anim = GetComponent<Animator>();
     _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -36,7 +44,7 @@ public class PoubelleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if(PreGameManager.Instance.hasGameStarted == false) return;
+        if(PreGameManager.Instance.hasGameStarted == false) return;
 
         //transform.Translate(Vector2.left*Time.deltaTime);
         if (isLeveledUp)
