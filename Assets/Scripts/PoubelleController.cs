@@ -241,7 +241,7 @@ public class PoubelleController : MonoBehaviour
         {
             if(level == 0){
                 print("level up!");
-                
+                evolve.Play();
                 anim.SetBool("ISLVL2", true);
             }
             level = 1;
