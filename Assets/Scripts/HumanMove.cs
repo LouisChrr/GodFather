@@ -20,10 +20,14 @@ public class HumanMove : MonoBehaviour
     public float timeStop = 2f;
     public float timeS = 0f;
 
-    public float minMapX = -10f;
+    /*public float minMapX = -10f;
     public float maxMapX = 10f;
     public float minMapY = -10f;
-    public float maxMapY = 10f;
+    public float maxMapY = 10f;*/
+
+    public Vector2 minLimPos;
+    public Vector2 maxLimPos;
+
     public Vector2 posArriv;
     private Animator anim;
 
@@ -42,8 +46,8 @@ private void Awake() {
     {
         position = transform.position;
         lastPos = position;
-        posArriv.x = Random.Range(minMapX,maxMapX);
-        posArriv.y = Random.Range(minMapY, maxMapY);
+        posArriv.x = Random.Range(minLimPos.x,maxLimPos.x);
+        posArriv.y = Random.Range(minLimPos.y, maxLimPos.y);
         CheckOrientation();
         //print(posArriv.x + " ; " + posArriv.y);
     }
@@ -199,8 +203,8 @@ private void FixedUpdate() {
 
     private void newArriv()
     {
-        posArriv.x = Random.Range(minMapX, maxMapX);
-        posArriv.y = Random.Range(minMapY, maxMapY);
+        posArriv.x = Random.Range(minLimPos.x, maxLimPos.x);
+        posArriv.y = Random.Range(minLimPos.y, maxLimPos.y);
         CheckOrientation();
         //print(posArriv.x + " ; " + posArriv.y);
     }
