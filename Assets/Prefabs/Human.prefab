@@ -111,8 +111,8 @@ MonoBehaviour:
   lastPos: {x: 0, y: 0}
   timeStop: 2
   timeS: 0
-  minLimPos: {x: 0, y: 0}
-  maxLimPos: {x: 0, y: 0}
+  minLimPos: {x: -15, y: -7}
+  maxLimPos: {x: 15, y: 7}
   posArriv: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   directionFloat: 0

@@ -83,6 +83,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     score = 0;
                     pc.isLeveledUp = true;
                     pc.anim.SetBool("ISLVL2", true);
+                    pc.gameObject.transform.localScale -= new Vector3(1, 1, 0);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage , 1);
             }
@@ -107,6 +108,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     score = 0;
                     pc.isLeveledUp = true;
                     pc.anim.SetBool("ISLVL2", true);
+                    pc.gameObject.transform.localScale -= new Vector3(1, 1, 0);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
@@ -132,6 +134,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     score = 0;
                     pc.isLeveledUp = true;
                     pc.anim.SetBool("ISLVL2", true);
+                    pc.gameObject.transform.localScale -= new Vector3(1, 1, 0);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);
@@ -158,6 +161,7 @@ public class PoubelleIdentifier : MonoBehaviour
                     score = 0;
                     pc.isLeveledUp = true;
                     pc.anim.SetBool("ISLVL2", true);
+                    pc.gameObject.transform.localScale -= new Vector3(1, 1, 0);
                 }
                 PreGameManager.Instance.spUI.UpdateScoreOfPlayer(ID, pourcentage, 1);
                 Destroy(other.gameObject);

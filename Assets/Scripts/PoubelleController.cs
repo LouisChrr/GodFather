@@ -42,6 +42,9 @@ public class PoubelleController : MonoBehaviour
         if (isLeveledUp)
         {
             _rigidbody2D.velocity = movement * moveSpeedLevelUp;
+
+            this.transform.localScale = new Vector3(0.5f,0.5f,1);
+
             //position.x += movement.x * Time.deltaTime * moveSpeedLevelUp;
            // position.y += movement.y * Time.deltaTime * moveSpeedLevelUp;
         }
