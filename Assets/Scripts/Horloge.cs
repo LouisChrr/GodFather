@@ -9,6 +9,7 @@ public class Horloge : MonoBehaviour
     [SerializeField] GameObject uiEndGame;
     [SerializeField] ScorePlayerUI scorePlayer;
     [SerializeField] GameObject allPoubelleForPodium;
+    [SerializeField] GameObject[] allGameObjectToDisable;
 
     int minute = 1;
     int seconde = 30;
@@ -40,6 +41,10 @@ public class Horloge : MonoBehaviour
                     uiEndGame.SetActive(true);
                     uiGame.SetActive(false);
                     allPoubelleForPodium.SetActive(true);
+                    foreach ( GameObject objetToDisable in allGameObjectToDisable)
+                    {
+                        objetToDisable.SetActive(false);
+                    }
                     endGamePodium.ClassementPlayer( (int.Parse(scorePlayer.playerTextScoreUI[0].text)), (int.Parse(scorePlayer.playerTextScoreUI[1].text)), (int.Parse(scorePlayer.playerTextScoreUI[2].text)), (int.Parse(scorePlayer.playerTextScoreUI[3].text)), PreGameManager.Instance.poubelles.Count);
                 }
             }
