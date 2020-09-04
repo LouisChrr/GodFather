@@ -87,6 +87,13 @@ MonoBehaviour:
   score: 0
   level: 0
   anim: {fileID: 0}
+  moveSound: {fileID: 0}
+  bonHuman: {fileID: 0}
+  badHuman: {fileID: 0}
+  banc: {fileID: 0}
+  bush: {fileID: 0}
+  evolve: {fileID: 0}
+  sac: {fileID: 0}
 --- !u!114 &-5494045953233253496
 MonoBehaviour:
   m_ObjectHideFlags: 0
