@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -12,10 +11,10 @@ public class PoduimEndGame : MonoBehaviour
 
     [SerializeField] Animator[] listeAnimator;
 
-    [SerializeField] AnimatorController blue;
-    [SerializeField] AnimatorController yellow;
-    [SerializeField] AnimatorController brown;
-    [SerializeField] AnimatorController green;
+    [SerializeField] RuntimeAnimatorController blue;
+    [SerializeField] RuntimeAnimatorController yellow;
+    [SerializeField] RuntimeAnimatorController brown;
+    [SerializeField] RuntimeAnimatorController green;
 
     [SerializeField] GameObject podium3;
     [SerializeField] GameObject podium4;
