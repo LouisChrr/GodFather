@@ -9,12 +9,12 @@ using UnityEngine.UI;
 public class PoduimEndGame : MonoBehaviour
 {
 
-    [SerializeField] Animator[] listeAnimator;
+    [SerializeField] Image[] listeImage;
 
-    [SerializeField] RuntimeAnimatorController blue;
-    [SerializeField] RuntimeAnimatorController yellow;
-    [SerializeField] RuntimeAnimatorController brown;
-    [SerializeField] RuntimeAnimatorController green;
+    [SerializeField] Sprite blue;
+    [SerializeField] Sprite yellow;
+    [SerializeField] Sprite brown;
+    [SerializeField] Sprite green;
 
     [SerializeField] GameObject podium3;
     [SerializeField] GameObject podium4;
@@ -52,13 +52,13 @@ public class PoduimEndGame : MonoBehaviour
 
         if (nbPlayer == 3)
         {
-            Destroy(listeAnimator[3].gameObject);
+            Destroy(listeImage[3].gameObject);
             Destroy(podium4);
         }
         else if (nbPlayer == 2)
         {
-            Destroy(listeAnimator[3].gameObject);
-            Destroy(listeAnimator[2].gameObject);
+            Destroy(listeImage[3].gameObject);
+            Destroy(listeImage[2].gameObject);
             Destroy(podium4);
             Destroy(podium3);
         }
@@ -68,19 +68,19 @@ public class PoduimEndGame : MonoBehaviour
             nbPlayer--;
             if (tab[nbPlayer] == scoreBlue)
             {
-                listeAnimator[nbPlayer].runtimeAnimatorController = blue;
+                listeImage[nbPlayer].sprite = blue;
             }
             else if (tab[nbPlayer] == scoreGreen)
             {
-                listeAnimator[nbPlayer].runtimeAnimatorController = green;
+                listeImage[nbPlayer].sprite = green;
             }
             else if (tab[nbPlayer] == scoreYellow)
             {
-                listeAnimator[nbPlayer].runtimeAnimatorController = yellow;
+                listeImage[nbPlayer].sprite = yellow;
             }
             else
             {
-                listeAnimator[nbPlayer].runtimeAnimatorController = brown;
+                listeImage[nbPlayer].sprite = brown;
             }
         }
     }

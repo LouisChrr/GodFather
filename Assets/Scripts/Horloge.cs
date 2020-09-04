@@ -8,7 +8,6 @@ public class Horloge : MonoBehaviour
     [SerializeField] GameObject uiGame;
     [SerializeField] GameObject uiEndGame;
     [SerializeField] ScorePlayerUI scorePlayer;
-    [SerializeField] GameObject allPoubelleForPodium;
     [SerializeField] GameObject[] allGameObjectToDisable;
 
     int minute = 1;
@@ -40,7 +39,6 @@ public class Horloge : MonoBehaviour
                 {
                     uiEndGame.SetActive(true);
                     uiGame.SetActive(false);
-                    allPoubelleForPodium.SetActive(true);
                     foreach ( GameObject objetToDisable in allGameObjectToDisable)
                     {
                         objetToDisable.SetActive(false);
